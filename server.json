@@ -1,0 +1,45 @@
+{
+  "episodes": [
+    {
+      "id": "Nova lei de venda e consumo de álcool em Cabo Verde, redes socias e muito mais...",      
+      "title": "RadicalCast - #01",
+      "members": "Ang3l, Grey, Nox, Vongola, Hxriq",
+      "published_at": "2019-11-15 15:15:09",
+      "thumbnail": "https://s3.castbox.fm/e6/e9/55/79e0d64649b221439a9fdffe4c.jpg",
+      "description": "<p>Nova lei de venda e consumo de álcool em Cabo Verde, redes socias e muito mais... </p>",
+      "file": {
+        "url": "https://s3.castbox.fm/cb/b7/99/283567417bb45c2673eb9b8489.mp3",
+        "type": "audio/x-mp3",
+        "duration": 4456
+      }
+    },
+
+    {
+      "id": "RadicalCast - #02 Nostalgia e Hipocrisia nas redes socias",      
+      "title": "RadicalCast - #02",
+      "members": "Ang3l, Grey, Nox, Vongola, Hxriq",
+      "published_at": "2019-11-25 15:15:09",
+      "thumbnail": "https://s3.castbox.fm/e6/e9/55/79e0d64649b221439a9fdffe4c.jpg",
+      "description": "<p>Relembrar é viver e hoje o Podcast é sobre momentos e coisas que fizeram parte da nossa infância, também conversamos sobre redes sociais e como as pessoas a utilizam. Enjoy! Servidor Radicalism no Discord https://discord.gg/Mtp8BnY Segue-nos no Instagram @radicalcast2014 e deixa o like na nossa página no Facebook RadicalCast.</p>",
+      "file": {
+        "url": "https://s3.castbox.fm/1d/5d/83/ace31649be95c628169c2a698d.mp3",
+        "type": "audio/mp3",
+        "duration": 2707
+      }
+    },
+    {
+      "id": "RadicalCast - #03 Música e Influências Culturais (convidado CH Lopes)",      
+      "title": "RadicalCast - #03",
+      "members": "Ang3l, Grey, Nox, Vongola, Hxriq, CH",
+      "published_at": "2019-11-30 15:15:09",
+      "thumbnail": "https://s3.castbox.fm/e6/e9/55/79e0d64649b221439a9fdffe4c.jpg",
+      "description": "<p>Conversa descontraída sobre influências culturais, música e muito mais com o nosso primeiro convidado, o Rapper natural da ilha do Sal, CH Lopes. Instagram Ch Lopes - https://www.instagram.com/ch_usc/ Servidor Radicalism no Discord https://discord.gg/Mtp8BnY Segue-nos no Instagram @radicalcast2014. músicas intro : https://youtu.be/WyCcm3WUJ3c fim : https://youtu.be/7dwPch-_vsA</p>",
+      "file": {
+        "url": "https://s3.castbox.fm/46/ef/f5/f92df6488296394811b5851b41.mp3",
+        "type": "audio/mp3",
+        "duration": 3639
+      }
+    }
+    
+  ]
+}
