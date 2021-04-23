@@ -1,17 +1,25 @@
 import  '../styles/global.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import { Header } from '../components/Header'
 import styles from '../styles/app.module.scss'
 import { Player } from '../components/Player'
+import { PlayerContextProvider } from '../contexts/PlayerContext'
+
 function MyApp({ Component, pageProps }) {
+  
   return (
-    <div className={styles.wrapperContainer}>
-      <main>
+    <PlayerContextProvider>
+      <div className={styles.wrapperContainer}>
+        <main>
         <Header/>
         <Component {...pageProps}/>
       </main>
       <Player/>
     </div>
+    
+    </PlayerContextProvider>
+      
+    
   )
 }
 
