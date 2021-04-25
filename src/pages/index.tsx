@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import React, { useContext } from "react";
-import { Header } from "../components/Header";
+import  Head  from "next/head";
 import { api } from "../services/api";
 import {format, parseISO} from 'date-fns'
 import ptBr from 'date-fns/locale/pt-BR';
@@ -8,7 +8,7 @@ import { totimeString } from "../utils/totimeString";
 import styles from "./home.module.scss";
 import Image from 'next/image';
 import Link from 'next/link';
-import { PlayerContext } from "../contexts/PlayerContext";
+import {  usePlayer } from "../contexts/PlayerContext";
 
 type Episode = {
   id: string;
@@ -28,12 +28,19 @@ type HomeProps = {
 }
 
 export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
-  const {playList} = useContext(PlayerContext);
+  const {playList} = usePlayer();
 
   const episodeList = {...latestEpisodes, ...allEpisodes};
 
   return (
+
+    
     <div className={styles.homepage}>
+      <Head>
+      <title>
+        RadicalCast
+        </title>
+    </Head>
       <section className={styles.latestEpisode}>
         <h2>Últimos episódios</h2>
         <ul>
@@ -58,7 +65,7 @@ export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
                     </div>
 
                 <button type="button" 
-                        onClick={() => playList(episodeList,index)}>
+                        onClick={() => playList(episodeList, getEpiIndex(epi) )}>
 
                   <img src="/play-green.svg" alt="Tocar episodio"/>
                
@@ -103,7 +110,7 @@ export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
                     <td style={{width:100}}>{epi.publishedAt}</td>
                     <td>{epi.durationString}</td>
                     <td>
-                      <button type="button" onClick={() => playList(episodeList, index )}>
+                      <button type="button" onClick={() => playList(episodeList, getEpiIndex(epi)  )}>
                         <img 
                         src="/play-green.svg"
                         alt="Tocar episódio"
@@ -130,7 +137,7 @@ export const getStaticProps: GetStaticProps = async () =>{
     params: {
       _limit: 12,
       _sort: 'published_at',
-      _order: 'desc'
+      _order: 'asc'
     }
   })
   
@@ -147,8 +154,9 @@ export const getStaticProps: GetStaticProps = async () =>{
     };
   })
 
-  const latestEpisodes = episodes.slice(0,2)
-  const allEpisodes = episodes.slice(0, episodes.length)
+  const latestEpisodes = episodes.slice(-2)
+  const allEpisodes = episodes
+  
 
   return { 
     props: {
@@ -157,4 +165,9 @@ export const getStaticProps: GetStaticProps = async () =>{
     },
     revalidate: 60 * 60 * 8
   }
+}
+
+function getEpiIndex(epi: Episode): number {
+  //console.log(epi)
+  return Number(epi.id)-1;
 }
